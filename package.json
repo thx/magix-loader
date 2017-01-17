@@ -1,0 +1,25 @@
+{
+  "name": "magix-loader",
+  "version": "1.0.0",
+  "description": "webpack loader for magix view",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thx/magix-loader.git"
+  },
+  "keywords": [
+    "magix",
+    "view",
+    "loader",
+    "webpack"
+  ],
+  "dependencies": {
+    "magix-combine": ">=1.2.9"
+  },
+  "author": "xinglie <xinglie.lkf@taobao.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thx/magix-loader/issues"
+  },
+  "homepage": "https://github.com/thx/magix-loader#readme"
+}
