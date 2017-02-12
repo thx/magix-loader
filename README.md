@@ -11,17 +11,18 @@ module.exports = {
         filename: '[name].js'
     },
     module: {
-        loaders: [
-            {
-                test:/\.(?:mx|js)$/, // js or mx 后缀
-                loader:'magix'
-            }
-        ]
-    },
-    resolve: {
-      alias: {
-        "$$": require.resolve('zepto'),    // var $ = require('$')
-      }
+        rules: [{
+            test:/\.(?:mx|js)$/, // js or mx 后缀
+            include:[
+                path.resolve(__dirname,'app')//只处理app目录
+            ],
+            use:[{
+                loader:'magix-loader',
+                options:{//编译器配置项，magix-loader 使用 magix-combine,这里是magix-combine的配置项 https://github.com/thx/magix-combine/issues/17
+                    //compressCss:false
+                }
+            }]
+        }]
     }
 };
 ```
