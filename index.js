@@ -2,7 +2,7 @@ var combine = require('magix-combine');
 var loaderUtils = require('loader-utils');
 combine.config({
     loaderType: 'webpack',
-    disableMagixUpdater: true,
+    //disableMagixUpdater: true,
     log: false
 });
 module.exports = function(content) {

@@ -1,3 +1,6 @@
+## 2.0.0
+1. 默认与`magix-combine`同配置
+
 ## 1.0.4
 1. 使用`magix-combine`分析出来的文件依赖
 2. 关闭`log`输出，使用`webpack`的已足够
