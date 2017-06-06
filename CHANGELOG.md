@@ -1,3 +1,6 @@
+## 2.0.4
+1. 解决webpack参数传递bug
+
 ## 2.0.3
 1. 更新magix-combine依赖
 

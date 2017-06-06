@@ -7,7 +7,7 @@ combine.config({
 });
 module.exports = function(content) {
     var context = this;
-    var options = loaderUtils.parseQuery(context.query);
+    var options = loaderUtils.getOptions(context) || {};
     combine.config(options);
     context.cacheable();
     var cb = context.async();
