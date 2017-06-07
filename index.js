@@ -1,20 +1,21 @@
-var combine = require('magix-combine');
-var loaderUtils = require('loader-utils');
+let combine = require('magix-combine');
+let loaderUtils = require('loader-utils');
 combine.config({
     loaderType: 'webpack',
-    //disableMagixUpdater: true,
     log: false
 });
-module.exports = function(content) {
-    var context = this;
-    var options = loaderUtils.getOptions(context) || {};
+module.exports = (content) => {
+    let context = this;
+    let options = loaderUtils.getOptions(context) || {};
     combine.config(options);
     context.cacheable();
-    var cb = context.async();
-    combine.processContent(context.resourcePath, '', content, true).then(function(e) {
-        for (var p in e.fileDeps) {
+    let cb = context.async();
+    combine.processContent(context.resourcePath, '', content, true).then((e) => {
+        for (let p in e.fileDeps) {
             context.addDependency(p);
         }
         cb(null, e.content);
+    }, (err) => { //增加的代码
+        cb(err);
     });
 };
