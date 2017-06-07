@@ -4,7 +4,7 @@ combine.config({
     loaderType: 'webpack',
     log: false
 });
-module.exports = (content) => {
+module.exports = function(content) {
     let context = this;
     let options = loaderUtils.getOptions(context) || {};
     combine.config(options);
