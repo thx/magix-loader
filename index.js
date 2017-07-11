@@ -10,12 +10,12 @@ module.exports = function(content) {
     combine.config(options);
     context.cacheable();
     let cb = context.async();
-    combine.processContent(context.resourcePath, '', content, true).then((e) => {
+    combine.processContent(context.resourcePath, '', content, true).then(e => {
         for (let p in e.fileDeps) {
             context.addDependency(p);
         }
         cb(null, e.content);
-    }, (err) => { //增加的代码
+    }, err => { //增加的代码
         cb(err);
     });
 };
