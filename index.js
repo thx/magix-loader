@@ -43,6 +43,10 @@ module.exports = function (content) {
         for (let p in e.fileDeps) {
             context.addDependency(p);
         }
+        if (options.noNeedAddViewAnalyze===true) {
+            cb(null, e.content);
+            return
+        }
         let requireArrays = e.tmplMxViewsArray || []
         let newRequireArray = []
         // 针对资源文件，可以追加需要分析的文件
