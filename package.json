@@ -1,6 +1,6 @@
 {
   "name": "magix-loader",
-  "version": "2.0.9",
+  "version": "2.0.10",
   "description": "webpack loader for magix view",
   "main": "index.js",
   "repository": {
