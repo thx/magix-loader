@@ -16,6 +16,7 @@ var collectViews = function(pageHtml) {
         match, basename
     while (match = magixViewReg.exec(pageHtml)) {
         basename = match[1].replace(/'|"|\\/g, '')
+        basename = basename.split('?')[0] // 兼容view带参数的写法
         results.push(basename)
     }
     return results
@@ -66,7 +67,10 @@ module.exports = function(content) {
         }
 
         requireArrays.forEach(function(element) {
+          // 不需要重复添加
+          if(!new RegExp(element).test(e.content)){
             e.content = 'require("' + element + '");\n' + e.content
+          }
         })
 
         cb(null, e.content);
