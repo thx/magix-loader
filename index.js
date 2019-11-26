@@ -1,11 +1,11 @@
-let combine = require('magix-combine');
+let composer = require('magix-composer');
 let loaderUtils = require('loader-utils');
 let fs = require('fs');
 let magixViewReg = /(?:mx|data)-view\s*=\s*\\?("[^"]*"|'[^']*'|[^'">\s]*)/g
 
 let depsCache = Object.create(null);
 
-combine.config({
+composer.config({
     loaderType: 'webpack',
     log: false
 });
@@ -37,10 +37,10 @@ module.exports = function(content) {
     let options = loaderUtils.getOptions(context) || {};
     let addViewRequire = options.addViewRequire
     let addViewAnalyze = options.addViewAnalyze
-    combine.config(options);
+    composer.config(options);
     context.cacheable();
     let cb = context.async();
-    combine.processContent(context.resourcePath, '', content, true).then(e => {
+    composer.processContent(context.resourcePath, '', content).then(e => {
         // console.log('e.tmplMxViews')
         // console.log(e.tmplMxViewsArray)
         depsCache[context.resourcePath] = [];

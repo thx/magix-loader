@@ -1,6 +1,6 @@
 {
   "name": "magix-loader",
-  "version": "3.0.0",
+  "version": "5.0.0",
   "description": "webpack loader for magix view",
   "main": "index.js",
   "repository": {
@@ -14,8 +14,8 @@
     "webpack"
   ],
   "dependencies": {
-    "magix-combine": "3.11.x",
-    "loader-utils": "1.1.x"
+    "magix-composer": "1.0.x",
+    "loader-utils": "1.2.x"
   },
   "author": "xinglie <xinglie.lkf@taobao.com>",
   "license": "MIT",
